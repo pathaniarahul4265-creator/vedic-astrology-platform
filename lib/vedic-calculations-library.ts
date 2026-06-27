@@ -382,8 +382,8 @@ export class VedicAstrologyEngine {
     const mahadasha = dashaRulers[currentDashaIndex];
     const antardasha = dashaRulers[(currentDashaIndex + 1) % 9];
     
-    const mahadashaLength = DASHA_PERIODS[mahadasha] || 10;
-    const antardashaDuration = DASHA_PERIODS[antardasha] || 10;
+   const mahadashaLength = DASHA_PERIODS[mahadasha as keyof typeof DASHA_PERIODS] || 10;
+const antardashaDuration = DASHA_PERIODS[antardasha as keyof typeof DASHA_PERIODS] || 10;
     
     const endDate = new Date(currentDate.getTime() + (antardashaDuration * 365.25 * 24 * 60 * 60 * 1000));
     

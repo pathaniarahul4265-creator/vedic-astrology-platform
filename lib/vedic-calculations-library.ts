@@ -371,7 +371,7 @@ export class VedicAstrologyEngine {
     let yearsInCurrentDasha = 0;
     
     for (let i = 0; i < 9; i++) {
-      const dashaLength = DASHA_PERIODS[dashaRulers[(startIndex + i) % 9]] || 10;
+      const dashaLength = DASHA_PERIODS[dashaRulers[(startIndex + i) % 9] as keyof typeof DASHA_PERIODS] || 10;
       if (yearsInCurrentDasha + dashaLength > ageInYears) {
         currentDashaIndex = (startIndex + i) % 9;
         break;
